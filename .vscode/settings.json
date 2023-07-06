@@ -9,7 +9,7 @@
     },
     "jenkins-runner.hostConfigs": {
         "jenkins-master": {
-            "url": "http://34.124.156.51:8080",
+            "url": "http://172.17.0.1:8080",
             "user": "maria_dev",
             "password": "tuanlinh34",
             "useCrumbIssuer": true,
