@@ -71,9 +71,27 @@ pipeline{
                 }
             }
         }
+        stage('Push The Change Deployment File To Git'){
+            steps{
+                script{
+                    sh """
+                    git config --global user.name "tuanlinh"
+                    git config --global user.email "tuanlinh060300@gmail.com"
+                    git add deployment.yml
+                    git commit -m "update file deployment"
+                    
+                    """
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                        sh "git push https://github.com/hashirama-hub/project_cicd.git main"
+
+}
+                }
+            }
+        }
+        
     }
 
 }
 
 
-//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
+//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
